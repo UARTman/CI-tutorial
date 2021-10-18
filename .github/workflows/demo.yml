@@ -13,7 +13,7 @@ jobs:
           python3 test.py
       - name: Build the executable
         run: |
-          pyinstaller --onefile gui.py
+          pyinstaller --windowed --onefile gui.py
       - name: Upload gui-linux
         uses: actions/upload-artifact@v2
         with:
@@ -32,7 +32,7 @@ jobs:
           python3 test.py
       - name: Build the executable
         run: |
-          pyinstaller --onefile gui.py
+          pyinstaller --windowed --onefile gui.py
       - name: Upload gui.exe
         uses: actions/upload-artifact@v2
         with:
