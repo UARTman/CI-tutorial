@@ -14,9 +14,11 @@ jobs:
       - name: Build the executable
         run: |
           pyinstaller --onefile gui.py
-      - name: List all files
-        run: |
-          ls dist
+      - name: Upload gui-linux
+        uses: actions/upload-artifact@v2
+        with:
+          name: gui-linux
+          path: dist/gui
   
   Build-on-Windows:
     runs-on: windows-latest
@@ -31,6 +33,8 @@ jobs:
       - name: Build the executable
         run: |
           pyinstaller --onefile gui.py
-      - name: List all files
-        run: |
-          ls dist
+      - name: Upload gui.exe
+        uses: actions/upload-artifact@v2
+        with:
+          name: gui.exe
+          path: dist/gui.exe
